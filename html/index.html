@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secure Password Generator</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="/javascript/index.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div id="content">
+        <h1>Password Generator</h1>
+        <div id="password-output">
+          <p id="password"></p>
+        </div>
+        <div id="slider-div">
+          <label for="password-length-slider">Länge</label>
+          <div>
+            <input type="range" id="password-length-slider" min="8" max="64" />
+            <p id="password-length-user-input">8</p>
+          </div>
+        </div>
+        <div id="checkboxes">
+          <input type="checkbox" id="checkbox_letters" />
+          <input type="checkbox" id="checkbox_numbers" />
+          <input type="checkbox" id="checkbox_special_chars" />
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
