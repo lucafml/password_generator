@@ -14,6 +14,9 @@ const checkbox_numbers = document.getElementById("checkbox_numbers");
 const checkbox_special_chars = document.getElementById(
   "checkbox_special_chars"
 );
+const checkbox_generateList = document.getElementById("generateList");
+const generateListRange = document.getElementById("generateListRange");
+const generateListRangeDiv = document.getElementById("generateListRangeDiv");
 
 /* This is a function to change the value from
 a paragraph next to the slider to the current 
@@ -33,14 +36,19 @@ function genPassword() {
   var chars = getChars();
   var passwordOutput = "";
 
-  if (!chars) {
-    passwordOutputParagrapgh.textContent = "-";
-  } else {
-    for (let i = 0; i < passwordLength; i++) {
-      var randInt = getRandInt(chars.length);
-      passwordOutput += chars[randInt];
+  if (!checkbox_generateList.checked) {
+    if (!chars) {
+      passwordOutputParagrapgh.textContent = "-";
+    } else {
+      for (let i = 0; i < passwordLength; i++) {
+        var randInt = getRandInt(chars.length);
+        passwordOutput += chars[randInt];
+      }
+      passwordOutputParagrapgh.textContent = passwordOutput;
     }
-    passwordOutputParagrapgh.textContent = passwordOutput;
+  } else {
+    var arr = generatePasswordArray();
+    downloadPasswordAsTXT(arr);
   }
 }
 
@@ -69,3 +77,57 @@ function getChars() {
 
   return chars;
 }
+
+/* If the user decides to generate a .txt
+file with a chosen number of passwords */
+
+checkbox_generateList.addEventListener("change", showInputNumber);
+
+function showInputNumber() {
+  if (checkbox_generateList.checked) {
+    generateListRangeDiv.style.display = "block";
+  } else if (!checkbox_generateList.checked) {
+    generateListRangeDiv.style.display = "none";
+  }
+}
+
+function generatePasswordArray() {
+  var chars = getChars();
+  var numberOfPasswords = generateListRange.value;
+  var arr = [];
+
+  if (!chars) {
+    window.alert(
+      "Bitte klicke an, woraus deine Passwörter bestehen dürfen / sollen"
+    );
+  } else {
+    for (let i = 0; i < numberOfPasswords; i++) {
+      var passwordOutput = "";
+      for (let i = 0; i < passwordLength; i++) {
+        var randInt = getRandInt(chars.length);
+        passwordOutput += chars[randInt];
+      }
+      arr.push(passwordOutput);
+    }
+    return arr;
+  }
+}
+
+function downloadPasswordAsTXT(passwords) {
+  var arr = passwords;
+  var arrAsString = arr.join("\n \n");
+
+  const blob = new Blob([arrAsString], { type: "text/plain" });
+  const downloadLink = document.createElement("a");
+
+  downloadLink.href = URL.createObjectURL(blob);
+  downloadLink.download = "passwords.txt";
+
+  downloadLink.click();
+
+  URL.revokeObjectURL(downloadLink.href);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  checkbox_generateList.checked = false;
+});

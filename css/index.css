@@ -36,9 +36,6 @@ main {
   border-radius: 0.7rem;
   background-color: rgb(52, 69, 94);
   margin-bottom: 1.5rem;
-}
-
-#password-output {
   word-break: break-all;
   white-space: normal;
 }
@@ -81,4 +78,20 @@ main {
 
 #generate_button:hover {
   background-color: rgb(76, 73, 153);
+}
+
+#generateListInputDiv {
+  margin-bottom: 0.5rem;
+  word-break: normal;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+#generateListRangeDiv {
+  display: none;
+}
+
+hr {
+  width: 100%;
+  color: rgb(80, 102, 134);
 }
