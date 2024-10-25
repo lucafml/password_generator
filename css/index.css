@@ -21,6 +21,7 @@ main {
   border-radius: 0.7rem;
   background-color: rgb(46, 61, 83);
   padding: 1.5rem;
+  box-shadow: 0 0 50px 5px rgb(97, 136, 173);
 }
 
 #password-output {
