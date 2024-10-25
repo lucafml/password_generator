@@ -32,6 +32,10 @@ main {
   margin-bottom: 1.5rem;
 }
 
+#slider-div {
+  margin-bottom: 1.5rem;
+}
+
 #slider-div div {
   display: flex;
   justify-content: space-between;
