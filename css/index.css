@@ -53,4 +53,20 @@ main {
   display: flex;
   flex-direction: column;
   align-items: start;
+  margin-bottom: 1.5rem;
+}
+
+#generate_button {
+  width: 100%;
+  height: 60px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: white;
+  background-color: rgb(84, 82, 173);
+  border: none;
+  border-radius: 0.7rem;
+}
+
+#generate_button:hover {
+  background-color: rgb(76, 73, 153);
 }
