@@ -28,12 +28,13 @@ the changeValue() function with every change
 on the slider */
 slider.addEventListener("input", changeValue);
 
+// Generate Password and output it
 function genPassword() {
   var chars = getChars();
   var passwordOutput = "";
 
   if (!chars) {
-    console.log("-");
+    passwordOutputParagrapgh.textContent = "-";
   } else {
     for (let i = 0; i < passwordLength; i++) {
       var randInt = getRandInt(chars.length);
@@ -47,6 +48,10 @@ function getRandInt(max) {
   return Math.floor(Math.random() * max);
 }
 
+/* Check what checkboxes the user checked
+and add the chars to the pool of possible chars
+the password can contain
+ */
 function getChars() {
   var chars = "";
 
