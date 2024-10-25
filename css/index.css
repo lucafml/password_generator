@@ -44,3 +44,9 @@ main {
   outline: none;
   accent-color: rgb(84, 82, 173);
 }
+
+#checkboxes {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
