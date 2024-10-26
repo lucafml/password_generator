@@ -60,6 +60,7 @@ function getRandInt(max) {
 and add the chars to the pool of possible chars
 the password can contain
  */
+
 function getChars() {
   var chars = "";
 
@@ -113,6 +114,10 @@ function generatePasswordArray() {
   }
 }
 
+/* A function that creates a .txt file,
+fills it with passwords and automatically
+downloads it */
+
 function downloadPasswordAsTXT(passwords) {
   var arr = passwords;
   var arrAsString = arr.join("\n \n");
@@ -127,6 +132,9 @@ function downloadPasswordAsTXT(passwords) {
 
   URL.revokeObjectURL(downloadLink.href);
 }
+
+/* Uncheck checkbox when site is
+loaded or reloaded */
 
 document.addEventListener("DOMContentLoaded", function () {
   checkbox_generateList.checked = false;
