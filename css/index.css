@@ -91,6 +91,12 @@ main {
   display: none;
 }
 
+#generateListRangeWarning {
+  display: none;
+  color: rgb(230, 76, 76);
+  margin-top: 0.5rem;
+}
+
 hr {
   width: 100%;
   color: rgb(80, 102, 134);
