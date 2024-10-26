@@ -17,6 +17,9 @@ const checkbox_special_chars = document.getElementById(
 const checkbox_generateList = document.getElementById("generateList");
 const generateListRange = document.getElementById("generateListRange");
 const generateListRangeDiv = document.getElementById("generateListRangeDiv");
+const generateListRangeWarning = document.getElementById(
+  "generateListRangeWarning"
+);
 
 /* This is a function to change the value from
 a paragraph next to the slider to the current 
@@ -47,6 +50,10 @@ function genPassword() {
       passwordOutputParagrapgh.textContent = passwordOutput;
     }
   } else {
+    if (generateListRange.value < 1) {
+      generateListRangeWarning.style.display = "block";
+      return;
+    }
     var arr = generatePasswordArray();
     downloadPasswordAsTXT(arr);
   }
