@@ -11,8 +11,6 @@ p {
 main {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 800px;
 }
 
 #content {
@@ -22,6 +20,7 @@ main {
   background-color: rgb(46, 61, 83);
   padding: 1.5rem;
   box-shadow: 0 0 50px 5px rgb(97, 136, 173);
+  margin-top: 200px;
 }
 
 #password-output {
@@ -96,6 +95,16 @@ main {
   display: none;
 }
 
+#generateListRange {
+  border-radius: 5px;
+  width: 70px;
+  border: 1px solid #ccc;
+}
+
+#generateListRange:focus {
+  outline: 2px solid rgb(119, 117, 216);
+}
+
 #generateListRangeWarning {
   display: none;
   color: rgb(230, 76, 76);
@@ -111,7 +120,7 @@ hr {
 .switch {
   position: relative;
   display: inline-block;
-  width: 35px;
+  min-width: 35px;
   height: 20px;
   margin-right: 0.6rem;
 }
@@ -151,7 +160,7 @@ hr {
 }
 
 input:checked + .slider {
-  background-color: #2196f3;
+  background-color: rgb(119, 117, 216);
 }
 
 input:focus + .slider {
@@ -162,4 +171,17 @@ input:checked + .slider:before {
   -webkit-transform: translateX(15px);
   -ms-transform: translateX(15px);
   transform: translateX(15px);
+}
+
+/* Hide arrows in input type number */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }

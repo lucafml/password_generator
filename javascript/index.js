@@ -21,6 +21,8 @@ const generateListRangeWarning = document.getElementById(
   "generateListRangeWarning"
 );
 
+const generate_button = document.getElementById("generate_button");
+
 /* This is a function to change the value from
 a paragraph next to the slider to the current 
 sliders value */
@@ -90,12 +92,21 @@ function getChars() {
 file with a chosen number of passwords */
 
 checkbox_generateList.addEventListener("change", showInputNumber);
+checkbox_generateList.addEventListener("change", alterButtonText);
 
 function showInputNumber() {
   if (checkbox_generateList.checked) {
     generateListRangeDiv.style.display = "block";
   } else if (!checkbox_generateList.checked) {
     generateListRangeDiv.style.display = "none";
+  }
+}
+
+function alterButtonText() {
+  if (checkbox_generateList.checked) {
+    generate_button.textContent = "Generate and download .txt";
+  } else if (!checkbox_generateList.checked) {
+    generate_button.textContent = "Generate Password";
   }
 }
 
