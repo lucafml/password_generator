@@ -29,24 +29,34 @@
           </div>
         </div>
         <div id="checkboxes">
-          <div>
-            <input type="checkbox" id="checkbox_letters" checked />
-            <label for="checkbox_letters">Buchstaben</label>
+          <div class="checkbox">
+            <label class="switch">
+              <input type="checkbox" id="checkbox_letters" checked />
+              <span class="slider"></span>
+            </label>
+            <p class="label">Buchstaben</p>
           </div>
-          <div>
-            <input type="checkbox" id="checkbox_numbers" />
-            <label for="checkbox_numbers">Zahlen</label>
+          <div class="checkbox">
+            <label class="switch">
+              <input type="checkbox" id="checkbox_numbers" />
+              <span class="slider"></span>
+            </label>
+            <p class="label">Zahlen</p>
           </div>
-          <div>
-            <input type="checkbox" id="checkbox_special_chars" />
-            <label for="checkbox_special_chars">Sonderzeichen</label>
+          <div class="checkbox">
+            <label class="switch">
+              <input type="checkbox" id="checkbox_special_chars" />
+              <span class="slider"></span>
+            </label>
+            <p class="label">Sonderzeichen</p>
           </div>
           <hr />
           <div id="generateListInputDiv">
-            <input type="checkbox" id="generateList" />
-            <label for="generateList"
-              >Mehrere Passwörter in .txt speichern?</label
-            >
+            <label class="switch">
+              <input type="checkbox" id="generateList" />
+              <span class="slider"></span>
+            </label>
+            <p class="label"></p>
           </div>
           <div id="generateListRangeDiv">
             <label for="generateListRange">Anzahl</label>
